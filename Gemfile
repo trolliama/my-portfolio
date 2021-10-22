@@ -57,4 +57,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # 3rd party gems
 gem 'acts-as-taggable-on', '~> 8.1'
+gem 'devise'
+gem 'cancancan'
 gem 'rails_admin', '~> 2.2', '>= 2.2.1'

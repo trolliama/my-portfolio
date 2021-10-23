@@ -8,5 +8,6 @@ class Ability
     return unless user && user.admin?
     can :access, :rails_admin       # only allow admin users to access Rails Admin
     can :read, :dashboard           # allow access to dashboard
+    can :manage, :all  
   end
 end

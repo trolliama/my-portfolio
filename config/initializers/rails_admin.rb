@@ -23,6 +23,23 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
 
+  # config.included_models = ['ActsAsTaggableOn::Tag'] 
+
+  # config.model ActsAsTaggableOn::Tag do
+  #   list do
+  #     field :name
+  #     field :taggings_count
+  #   end
+  #   show do
+  #     field :name
+  #     field :taggings_count
+  #   end
+  #   edit do
+  #     field :name
+  #     field :taggings_count
+  #   end
+  # end
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
@@ -38,4 +55,5 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
 end

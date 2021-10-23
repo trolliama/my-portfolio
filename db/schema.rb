@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_22_222909) do
+ActiveRecord::Schema.define(version: 2021_10_23_161917) do
 
   create_table "link_types", force: :cascade do |t|
     t.string "type_name"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2021_10_22_222909) do
   create_table "profiles", force: :cascade do |t|
     t.text "resume"
     t.text "career_path"
-    t.text "picture"
+    t.string "picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "title"

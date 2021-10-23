@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_23_161917) do
+ActiveRecord::Schema.define(version: 2021_10_23_185408) do
 
   create_table "link_types", force: :cascade do |t|
     t.string "type_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "icon"
   end
 
   create_table "links", force: :cascade do |t|
     t.string "name"
     t.string "link"
-    t.string "icon"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "link_type_id", null: false

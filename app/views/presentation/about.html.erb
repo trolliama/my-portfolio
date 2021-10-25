@@ -1,2 +1,37 @@
-<h1>Presentation#about</h1>
-<p>Find me in app/views/presentation/about.html.erb</p>
+<%= render 'shared/nav' %>
+
+<div class="container my-5">
+  <div class="row py-5 align-items-center">
+    <div class="col"><%= image_tag @profile.picture %></div>
+    <div class="col">
+      <h1>Hello World!</h1>
+      <p><%= @profile.resume %></p>
+    </div>
+  </div>
+
+  <div class="row my-5">
+    <div class="col">
+      <h2>My Road</h2>
+      <p><%= @profile.career_path %></p>
+    </div>
+    <div class="col">
+      <%= render partial: "tag", collection: @profile.all_tags %>
+    </div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col">
+      <div class="row my-4">
+        <div class="col text-center">
+          <h3>Main Projects</h3>
+        </div>
+      </div>
+      <div class="row my-4">
+        <%= render partial: 'shared/project_item', collection: @profile.projects
+        %>
+      </div>
+    </div>
+  </div>
+
+  <%= render 'contact' %>
+</div>

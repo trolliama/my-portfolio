@@ -6,3 +6,23 @@
   font-size: 17px;
   padding: 10px;
 }
+
+#contact {
+  // border: 3px solid;
+  border-radius: 10px;
+}
+#contact .contact-heading{
+  font-size: 60px;
+}
+
+#contactForm .form-control {
+	border: none;
+	// border: 1px solid #ccc;
+	background: #f3f3f3;
+	&:active, &:focus {
+		outline: none;
+		box-shadow: none;
+		border-color: #000;
+		background: #f3f3f3;
+	}
+}

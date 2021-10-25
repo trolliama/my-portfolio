@@ -1,4 +1,13 @@
 <div class="col">
-  <p><%= project_item.title %></p>
-  <p><%= project_item.description %></p>
+  <p></p>
+  <p></p>
+  <div class="card" style="width: 18rem;">
+    <%= image_tag project_img(project_item.thumb_image, "thumb"), width: '100%' %>
+    <div class="card-body">
+      <h5 class="card-title"><%= project_item.title %></h5>
+      <p class="card-text"><%= project_item.description %></p>
+      <%= link_to "Full description", project_item, class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>
+

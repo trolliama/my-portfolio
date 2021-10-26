@@ -36,4 +36,12 @@
   <div class="row my-5 px-5 border border-dark align-items-center" id="contact">
     <%= render 'contact' %>
   </div>
+
+  <div class="social-div">
+    <% @profile.links.each do |link| %>
+    <div class="row">
+      <a href="<%= link.link %>"><%= link.link_type.icon.html_safe %></a>
+    </div>
+    <% end %>
+  </div>
 </div>

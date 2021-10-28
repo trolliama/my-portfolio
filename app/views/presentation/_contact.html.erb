@@ -5,61 +5,44 @@
   </div>
 </div>
 <div class="col-md-6 my-5">
-  <form class="mb-5" method="post" id="contactForm" name="contactForm">
-    <div class="row">
-      <div class="col-md-12 form-group">
-        <input
-          type="text"
-          class="form-control"
-          name="name"
-          id="name"
-          placeholder="Your name"
-        />
-      </div>
+  <%= form_for contact, html: {class: 'mb-5'} do |f|%>
+  <div class="row">
+    <div class="col-md-12 form-group">
+      <%= f.text_field :name, required: true, class: "form-control",
+      placeholder: "Your name" %>
     </div>
-    <div class="row">
-      <div class="col-md-12 form-group">
-        <input
-          type="text"
-          class="form-control"
-          name="email"
-          id="email"
-          placeholder="Email"
-        />
-      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 form-group">
+      <%= f.text_field :email, required: true, class: "form-control",
+      placeholder: "Email" %>
     </div>
-    <div class="row">
-      <div class="col-md-12 form-group">
-        <input
-          type="text"
-          class="form-control"
-          name="subject"
-          id="subject"
-          placeholder="Subject"
-        />
-      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 form-group">
+      <%= f.text_field :subject, required: true, class: "form-control",
+      placeholder: "Subject" %>
     </div>
-    <div class="row">
-      <div class="col-md-12 form-group">
-        <textarea
-          class="form-control"
-          name="message"
-          id="message"
-          cols="30"
-          rows="7"
-          placeholder="Write your message"
-        ></textarea>
-      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 form-group">
+      <%= f.text_area :message, rows: 7, cols: 30, required: true, class:
+      "form-control", placeholder: "Write your message" %>
     </div>
-    <div class="row">
-      <div class="col-12">
-        <input
-          type="submit"
-          value="Send Message"
-          class="btn btn-dark rounded-0 py-2 px-4"
-        />
-        <span class="submitting"></span>
-      </div>
+  </div>
+
+  <div class="d-none">
+    <%= f.label :nickname %> <%= f.text_field :nickname, :hint => 'Leave this
+    field blank!' %>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <%= f.submit 'Send Message', class: 'btn btn-dark rounded-0 py-2 px-4',
+      value: "Send Message" %>
+
+      <span class="submitting"></span>
     </div>
-  </form>
+  </div>
+  <% end %>
 </div>

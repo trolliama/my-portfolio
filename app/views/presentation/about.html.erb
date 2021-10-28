@@ -1,7 +1,7 @@
 <%= render 'shared/nav' %>
 
-<div class="container my-5">
-  <div class="row py-5 align-items-center">
+<div class="container">
+  <div class="row align-items-center">
     <div class="col"><%= image_tag @profile.picture %></div>
     <div class="col">
       <h1>Hello World!</h1>
@@ -26,15 +26,15 @@
           <h3>Main Projects</h3>
         </div>
       </div>
-      <div class="row my-5 pb-5">
-        <%= render partial: 'shared/project_item', collection: @profile.projects
-        %>
+      <div class="cards row my-5">
+          <%= render partial: 'shared/project_item', collection:
+          @profile.projects %>
       </div>
     </div>
   </div>
 
   <div class="row my-5 px-5 border border-dark align-items-center" id="contact">
-    <%= render 'contact' %>
+    <%= render partial: 'contact', locals: {contact: @contact} %>
   </div>
 
   <div class="social-div">

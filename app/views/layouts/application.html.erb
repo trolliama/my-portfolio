@@ -5,16 +5,38 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %> 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
-    <%= stylesheet_link_tag 'presentation', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Festive&family=Pacifico&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
+
+    <%= stylesheet_link_tag 'presentation', media: 'all', 'data-turbolinks-track':'reload' %>
+
+    <%= stylesheet_link_tag 'projects', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'projects', 'data-turbolinks-track': 'reload' %>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Festive&family=Pacifico&family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-      <%= yield %>
+    <div class="container my-5 pt-3">
+      <% flash.each do |key, messages| %>
+        <% messages.each do |message| %>
+          <div class="alert alert-<%= key %> alert-dismissible fade show">
+            <%= message %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <%= yield %>
   </body>
 </html>

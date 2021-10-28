@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   devise_for :users
   
   get 'presentation/about', as: :about
+  post 'presentation/about', to: "presentation#create", as: :contacts
+
 end

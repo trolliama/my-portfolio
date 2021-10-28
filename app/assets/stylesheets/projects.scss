@@ -1,0 +1,119 @@
+:root {
+  --surface-color: #fff;
+  --curve: 40;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 5vw;
+  padding: 0;
+  list-style-type: none;
+}
+
+.custom-card {
+  position: relative;
+  display: block;
+  height: 100%;
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.image-hover {
+  position: relative;
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: 0.5s ease;
+}
+
+.card__image-buttons {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.image-hover:hover .card__image {
+  opacity: 0.3;
+}
+
+.image-hover:hover .card__image-buttons {
+  opacity: 1;
+}
+
+.resume-button {
+    padding: 2px 6px 2px 6px;
+    transition: background-color 0.4s;
+}
+
+.resume-button i {
+    transition: color 0.4s;
+}
+
+.resume-button:hover {
+    background-color: #1F1F1F;
+}
+
+.resume-button:hover i{
+    color: white;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-radius: calc(var(--curve) * 1px);
+  background-color: var(--surface-color);
+  transform: translateY(100%);
+  transition: 0.2s ease-in-out;
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 1em;
+  padding-left: 2em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: 0.2s ease-in-out;
+}
+
+.description-hover:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__title{
+  font-size: 1em;
+  margin: 0 0 0.3em;
+  color: #141414;
+}
+
+.description-hover:hover .card__header {
+  transform: translateY(0);
+}
+
+.card__description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: #7b838a;
+  font-family: "MockFlowFont";
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}

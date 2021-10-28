@@ -1,13 +1,45 @@
-<div class="col">
-  <p></p>
-  <p></p>
+<!-- <div class="col">
   <div class="card" style="width: 18rem;">
     <%= image_tag project_img(project_item.thumb_image, "thumb"), width: '100%' %>
     <div class="card-body">
-      <h5 class="card-title"><%= project_item.title %></h5>
-      <p class="card-text"><%= project_item.description %></p>
-      <%= link_to "Full description", project_item, class: "btn btn-primary" %>
+      <p class="card-text project-desc"><%= project_item.description %></p>
     </div>
   </div>
-</div>
+</div> -->
 
+<div class="col">
+  <a href="" class="custom-card">
+    <div class="image-hover">
+      <%= image_tag project_img(project_item.thumb_image, "thumb"),
+      width:'100%', class: "card__image" %>
+      <div class="container-fluid card__image-buttons">
+        <div class="row pb-5 mt-4 mr-2 justify-content-end">
+          <div class="resume-button rounded-circle">
+            <i class="fas fa-eye"></i>
+          </div>
+        </div>
+        <div class="row pb-5 mb-5 justify-content-center">
+          <div class="view-button btn btn-outline-dark btn-lg">Read More</div>
+        </div>
+      </div>
+    </div>
+    <div class="description-hover">
+      <div class="card__overlay">
+        <div class="card__header">
+          <div class="card__header-text">
+            <div class="row align-items-center">
+              <div class="col">
+                <h3 class="card__title"><%= project_item.title %></h3>
+              </div>
+              <div class="col px-5"></div>
+              <div class="col site-btn-container">
+                <div class="btn btn-primary btn-sm px-3">site</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="card__description"><%= project_item.description %></p>
+      </div>
+    </div>
+  </a>
+</div>

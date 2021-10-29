@@ -1,5 +1,18 @@
 <%= render 'shared/nav' %>
 
+<div class="container my-5 pt-3">
+  <% flash.each do |key, messages| %>
+    <% messages.each do |message| %>
+      <div class="alert alert-<%= key %> alert-dismissible fade show">
+        <%= message %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
 <div class="container">
   <div class="row align-items-center">
     <div class="col"><%= image_tag @profile.picture %></div>

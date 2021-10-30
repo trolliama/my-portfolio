@@ -1,25 +1,28 @@
-<!-- <div class="col">
-  <div class="card" style="width: 18rem;">
-    <%= image_tag project_img(project_item.thumb_image, "thumb"), width: '100%' %>
-    <div class="card-body">
-      <p class="card-text project-desc"><%= project_item.description %></p>
-    </div>
-  </div>
-</div> -->
-
 <div class="col">
-  <a href="" class="custom-card">
-    <div class="image-hover">
-      <%= image_tag project_img(project_item.thumb_image, "thumb"),
-      width:'100%', class: "card__image" %>
-      <div class="container-fluid card__image-buttons">
-        <div class="row pb-5 mt-4 mr-2 justify-content-end">
-          <div class="resume-button rounded-circle">
+  <div href="" class="custom-card">
+    <div class="row image-hover">
+      <!-- <%= image_tag project_img(project_item.thumb_image, "thumb"),
+      width:'100%', class: "card__image" %> -->
+      <img
+        class="card__image"
+        src="http://trumpwallpapers.com/wp-content/uploads/Vaporwave-Wallpaper-28-1980-x-720.jpg"
+        width="400"
+        height="250"
+      />
+      <div class="container card__image-buttons">
+        <div class="row justify-content-end">
+          <a
+            class="resume-button rounded-circle"
+            role="button"
+            data-toggle="modal"
+            data-target="#resume<%= project_item.id %>"
+          > 
             <i class="fas fa-eye"></i>
-          </div>
+          </a>
         </div>
-        <div class="row pb-5 mb-5 justify-content-center">
-          <div class="view-button btn btn-outline-dark btn-lg">Read More</div>
+        <div class="row justify-content-center">
+          <%= link_to "Read More", project_path(project_item.id), class: "btn
+          btn-outline-dark btn-lg" %>
         </div>
       </div>
     </div>
@@ -31,15 +34,37 @@
               <div class="col">
                 <h3 class="card__title"><%= project_item.title %></h3>
               </div>
-              <div class="col px-5"></div>
-              <div class="col site-btn-container">
-                <div class="btn btn-primary btn-sm px-3">site</div>
-              </div>
             </div>
           </div>
         </div>
-        <p class="card__description"><%= project_item.description %></p>
+        <div class="row">
+          <p class="card__description"><%= project_item.description %></p>
+        </div>
+        <div class="row justify-content-center mb-4">
+          <a class="demo-btn btn btn-primary btn-sm px-3" href="#">demo</a>
+        </div>
       </div>
     </div>
-  </a>
+  </div>
+</div>
+
+<div class="modal fade" id="resume<%= project_item.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Resume</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= project_item.resume_card %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= link_to "Read More", project_path(project_item.id), class: "btn
+          btn-primary" %>
+      </div>
+    </div>
+  </div>
 </div>

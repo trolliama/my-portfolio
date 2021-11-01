@@ -1,4 +1,6 @@
 class Profile < ApplicationRecord
+    has_one_attached :picture
+
     @@contexts = [:technologies, :skills]
 
     include TagManager
@@ -8,4 +10,6 @@ class Profile < ApplicationRecord
 
     acts_as_taggable_on(*@@contexts)
 
+    validates :picture, attached: true,
+                    content_type: ['image/png', 'image/jpg', 'image/jpeg']
 end

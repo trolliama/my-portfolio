@@ -60,6 +60,7 @@ gem 'acts-as-taggable-on', '~> 8.1'
 gem 'devise'
 gem 'cancancan'
 gem 'rails_admin', '~> 2.2', '>= 2.2.1'
+gem 'rails_admin_tag_list'
 gem 'mail_form'
 gem 'active_storage_validations'
 gem "aws-sdk-s3", require: false

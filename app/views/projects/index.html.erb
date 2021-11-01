@@ -1,4 +1,6 @@
-<%= render "shared/nav" %>
+
+<%= render partial: "shared/nav", layout: "nav_wrapper" %>
+
 <div class="bg-dark py-5">
   <div class="container py-5 px-5">
     <div class="row justify-content-center">
@@ -18,7 +20,7 @@
         <div class="input-group">
           <%= form_with url: project_search_path, method: :get, html: {class: "form-inline"} do |form| %>
             <%= form.text_field :query , class: "form-control", placeholder: "Technologies... (Ex: python, aws)"%>
-            <button type="submit" class="btn btn-primary px-4">
+            <button type="submit" class="btn btn-info px-4">
               <i class="fas fa-search"></i>
             </button>
           <% end %>
@@ -41,3 +43,5 @@
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'projects' %>

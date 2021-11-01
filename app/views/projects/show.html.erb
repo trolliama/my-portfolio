@@ -1,3 +1,30 @@
-<p id="notice"><%= notice %></p>
-<h1><%= @project.title %></h1>
-<%= link_to 'Back', projects_path %>
+<%= render 'shared/nav' %>
+
+<div class="project-show conatainer-fluid mt-5 pt-5">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">
+      <div class="row ml-3 mb-4">
+        <div class="row">
+          <h1><%= @project.title %></h1>
+          <span class="description"><%= @project.description %></span>
+        </div>
+        <div class="row">
+          <%= render partial: "shared/tag", collection: @project.all_tags,
+          locals: {_classes: "custom-badge custom-badge-info
+          custom-badge-outlined badge-pill m-2"} %>
+        </div>
+      </div>
+      <div class="row mb-5">
+        <%= image_tag project_img(@project.main_image, "main") %>
+      </div>
+      <div class="row">
+        <p><%= @project.body %></p>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+  <div class="social-div">
+    <%= render partial: 'shared/link', collection: @project.links %>
+  </div>
+</div>

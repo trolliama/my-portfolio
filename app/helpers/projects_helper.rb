@@ -7,7 +7,7 @@ module ProjectsHelper
         if type == 'thumb'
             image_generator(height: '300', width: '400')
         elsif type == 'main'
-            image_generator(height: '600', width: '400')
+            image_generator(height: '500', width: '800')
         end
     end
 end

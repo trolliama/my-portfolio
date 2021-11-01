@@ -1,16 +1,14 @@
 <%= render 'shared/nav' %>
 
 <div class="container my-5 pt-3">
-  <% flash.each do |key, messages| %>
-    <% messages.each do |message| %>
-      <div class="alert alert-<%= key %> alert-dismissible fade show">
-        <%= message %>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    <% end %>
-  <% end %>
+  <% flash.each do |key, messages| %> <% messages.each do |message| %>
+  <div class="alert alert-<%= key %> alert-dismissible fade show">
+    <%= message %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <% end %> <% end %>
 </div>
 
 <div class="container">
@@ -28,7 +26,9 @@
       <p><%= @profile.career_path %></p>
     </div>
     <div class="col my-2">
-      <%= render partial: "tag", collection: @profile.all_tags %>
+      <%= render partial: "shared/tag", collection: @profile.all_tags, locals:
+      {_classes: "custom-badge custom-badge-info custom-badge-outlined
+      tag-profiles m-2"} %>
     </div>
   </div>
 
@@ -40,8 +40,8 @@
         </div>
       </div>
       <div class="cards row my-5">
-          <%= render partial: 'shared/project_item', collection:
-          @profile.projects %>
+        <%= render partial: 'shared/project_item', collection: @profile.projects
+        %>
       </div>
     </div>
   </div>
@@ -51,10 +51,6 @@
   </div>
 
   <div class="social-div">
-    <% @profile.links.each do |link| %>
-    <div class="row py-2">
-      <a href="<%= link.link %>"><%= link.link_type.icon.html_safe %></a>
-    </div>
-    <% end %>
+    <%= render partial: 'shared/link', collection: @profile.links %>
   </div>
 </div>

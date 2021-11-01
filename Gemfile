@@ -61,3 +61,5 @@ gem 'devise'
 gem 'cancancan'
 gem 'rails_admin', '~> 2.2', '>= 2.2.1'
 gem 'mail_form'
+gem 'active_storage_validations'
+gem "aws-sdk-s3", require: false

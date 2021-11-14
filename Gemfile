@@ -63,6 +63,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # 3rd party gems
+gem "font-awesome-rails"
 gem 'acts-as-taggable-on', '~> 8.1'
 gem 'devise'
 gem 'cancancan'

@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # create link types
-[ "github", "linkedin", "medium", "demo" ].each do |value|
-  LinkType.create!(type_name: value, icon: value)
-  puts "Link type #{value} created"
+{ github: "github", linkedin: "linkedin", medium: "medium", demo: "chrome" }.each do |key, value|
+  LinkType.create!(type_name: key, icon: value)
+  puts "Link type #{key} created"
 end
 
 puts "Created 4 link_types"

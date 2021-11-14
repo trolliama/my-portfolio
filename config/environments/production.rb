@@ -74,7 +74,7 @@ Rails.application.configure do
     user_name: Rails.application.credentials.dig(:gmail, :username),
     password: Rails.application.credentials.dig(:gmail, :password)
   }
-  config.action_mailer.default_url_options = { :host => "https://caiow-portfolio.com"}
+  config.action_mailer.default_url_options = { :host => "https://caiow-portfolio.herokuapp.com"}
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

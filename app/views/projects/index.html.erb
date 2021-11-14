@@ -36,7 +36,9 @@
     <div class="col-12">
       <% if !@projects.empty? %>
         <div class="cards">
+          <div class="row">
           <%= render partial: "shared/project_item", collection: @projects %>
+          </div>
         </div>
       <% else %>
         <%= render "project_not_found" %>

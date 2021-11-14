@@ -12,10 +12,11 @@
  *
  *= require_tree .
  *= require_self
- *= require font-awesome
  */
 @import "bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 body{
   font-family: 'Poppins', sans-serif;

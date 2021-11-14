@@ -22,7 +22,7 @@
           <%= form_with url: project_search_path, method: :get, html: {class: "form-inline"} do |form| %>
             <%= form.text_field :query , class: "form-control", placeholder: "Technologies... (Ex: python, aws)"%>
             <button type="submit" class="btn btn-info">
-              <i class="fas fa-search"></i>
+              <%= icon("fas", "search") %>
             </button>
           <% end %>
         </div>

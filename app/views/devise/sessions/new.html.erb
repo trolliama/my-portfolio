@@ -19,7 +19,7 @@
 <div id="login-wrapper">
   <div id="formContent">
     <div>
-      <h2><i class="fas fa-sign-in-alt"></i></h2>
+      <h2><%= icon("fas", "sign-in-alt") %></h2>
     </div>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %> 

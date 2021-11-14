@@ -1,14 +1,23 @@
-<%= render 'shared/nav' %>
+
+<%= render partial: 'shared/nav', layout: 'layouts/nav_light_layout' %>
+
 
 <div class="container my-5 pt-3">
-  <% flash.each do |key, messages| %> <% messages.each do |message| %>
-  <div class="alert alert-<%= key %> alert-dismissible fade show">
-    <%= message %>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <% end %> <% end %>
+  <% flash.each do |key, messages| %>
+    <% if messages.instance_of? String %>
+      <% messages = [messages] %>
+      <% key = "info" %>
+    <% end %>
+
+    <% messages.each do |message| %>
+    <div class="alert alert-<%= key %> alert-dismissible fade show">
+      <%= message %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <% end %> 
+  <% end %>
 </div>
 
 <div class="container">
@@ -39,7 +48,7 @@
           <h3>Main Projects</h3>
         </div>
       </div>
-      <div class="cards row my-5">
+      <div class="cards my-5">
         <%= render partial: 'shared/project_item', collection: @profile.projects
         %>
       </div>

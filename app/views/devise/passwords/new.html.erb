@@ -1,0 +1,20 @@
+ <%= render "devise/shared/error_messages", resource: resource %>
+
+<div id="login-wrapper">
+  <div id="formContent">
+    <div>
+      <h2>Reset Password</h2>
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: "email"%>
+      <%= f.submit "Send reset email" %>
+    <% end %>
+
+    <div id="formFooter">
+      <%= link_to "Log in", new_session_path(resource_name),
+      class: "underlineHover" %>
+    </div>
+  </div>
+</div>

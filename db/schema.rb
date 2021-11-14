@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_01_023520) do
+ActiveRecord::Schema.define(version: 2021_11_03_233805) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2021_11_01_023520) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "link_type_id", null: false
+    t.string "tooltip"
     t.index ["link_type_id"], name: "index_links_on_link_type_id"
   end
 

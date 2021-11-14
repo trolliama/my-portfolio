@@ -1,28 +1,40 @@
-<%= render 'shared/nav' %>
+<%= render partial: 'shared/nav', layout: 'layouts/nav_dark_layout' %>
 
-<div class="project-show conatainer-fluid mt-5 pt-5">
-  <div class="row">
-    <div class="col"></div>
-    <div class="col">
-      <div class="row ml-3 mb-4">
-        <div class="row">
-          <h1><%= @project.title %></h1>
-          <span class="description"><%= @project.description %></span>
+<div class="project-show container-fluid mt-5 pt-3">
+  <div class="row justify-content-center">
+    <div class="col-10">
+    <div class="cards">
+      <div id="project-article" class="card ">
+        <div class="card-header pl-5">
+          <div class="row pl-2">
+            <h1 class="card-title"><%= @project.title %></h1>
+          </div>
+          <div class="row pl-2">
+            <span class="card-subtitle mb-2 text-muted description"
+              ><%= @project.description %></span
+            >
+          </div>
+          <div class="row">
+            <%= render partial: "shared/tag", collection: @project.all_tags,
+            locals: {_classes: "custom-badge custom-badge-info
+            custom-badge-outlined badge-pill m-2"} %>
+          </div>
         </div>
-        <div class="row">
-          <%= render partial: "shared/tag", collection: @project.all_tags,
-          locals: {_classes: "custom-badge custom-badge-info
-          custom-badge-outlined badge-pill m-2"} %>
+        <div class="card-body ml-3 mb-4">
+          <div class="card-text">
+            <div class="row mb-5">
+              <%= image_tag project_img(@project.main_image, "main"), width:
+              800, height: 450, class: "card-img" %>
+            </div>
+            <div id="markdown" class="">
+              <p><%= markdown @project.body %></p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="row mb-5">
-        <%= image_tag project_img(@project.main_image, "main") %>
-      </div>
-      <div class="row">
-        <p><%= @project.body %></p>
       </div>
     </div>
-    <div class="col"></div>
+  </div>
+
   </div>
   <div class="social-div">
     <%= render partial: 'shared/link', collection: @project.links %>

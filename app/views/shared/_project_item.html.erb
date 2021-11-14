@@ -1,14 +1,9 @@
 <div class="col">
   <div href="" class="custom-card">
     <div class="row image-hover">
-      <!-- <%= image_tag project_img(project_item.thumb_image, "thumb"),
-      width:'100%', class: "card__image" %> -->
-      <img
-        class="card__image"
-        src="http://trumpwallpapers.com/wp-content/uploads/Vaporwave-Wallpaper-28-1980-x-720.jpg"
-        width="400"
-        height="250"
-      />
+      <%= image_tag project_img(project_item.thumb_image, "thumb"), width: 400,
+      height: 250, class: "card__image" %>
+
       <div class="container card__image-buttons">
         <div class="row justify-content-end">
           <a
@@ -33,16 +28,20 @@
             <h3 class="card__title"><%= project_item.title %></h3>
             <span class="card__tagline">
               <%= render partial: "shared/tag", collection:
-              project_item.technologies[0..4], locals: {_classes: "badge badge-pill badge-info"} %>
+              project_item.technologies[0..4], locals: {_classes: "badge
+              badge-pill badge-info"} %>
             </span>
           </div>
         </div>
         <div class="row">
           <p class="card__description"><%= project_item.description %></p>
         </div>
+        <% if project_item.demo_link %>
         <div class="row justify-content-center mb-4">
-          <a class="demo-btn btn btn-info btn-sm px-3" href="#">demo</a>
+          <%= link_to "demo", project_item.demo_link.link, target: :_blank, class:
+          "demo-btn btn btn-info btn-sm px-3" %>
         </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -70,13 +69,11 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <%= render partial: "shared/tag", collection:
-              project_item.all_tags, locals: {_classes: "badge badge-pill badge-info m-2"} %>
+          <%= render partial: "shared/tag", collection: project_item.all_tags,
+          locals: {_classes: "badge badge-pill badge-info m-2"} %>
         </div>
-        <hr>
-        <div class="row p-3">
-          <%= project_item.resume_card %>
-        </div>
+        <hr />
+        <div class="row p-3"><%= markdown project_item.resume_card %></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">

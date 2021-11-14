@@ -63,4 +63,8 @@ gem 'rails_admin', '~> 2.2', '>= 2.2.1'
 gem 'rails_admin_tag_list'
 gem 'mail_form'
 gem 'active_storage_validations'
+gem 'image_processing'
 gem "aws-sdk-s3", require: false
+
+gem "redcarpet"
+gem "coderay"

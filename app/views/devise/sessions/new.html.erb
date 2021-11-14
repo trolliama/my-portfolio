@@ -1,0 +1,36 @@
+<div class="container px-5 mt-3">
+  <% flash.each do |key, messages| %>
+    <% if messages.instance_of? String %>
+      <% messages = [messages] %>
+      <% key = "info" %>
+    <% end %>
+
+    <% messages.each do |message| %>
+    <div class="alert alert-<%= key %> alert-dismissible fade show">
+      <%= message %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <% end %> 
+  <% end %>
+</div>
+
+<div id="login-wrapper">
+  <div id="formContent">
+    <div>
+      <h2><i class="fas fa-sign-in-alt"></i></h2>
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %> 
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email" %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "password" %>
+      <%= f.submit "Log in" %> 
+    <%end %>
+
+    <div id="formFooter">
+      <%= link_to "Forgot your password?", new_password_path(resource_name),
+      class: "underlineHover" %><br />
+    </div>
+  </div>
+</div>

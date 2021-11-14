@@ -20,6 +20,20 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+staging:
+  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  database: staging-trolliama-portfolio
+  pool: 5
+  username: root
+  password: 
+
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: caiow-portfolio
+  pool: 5
+  username: root
+  password: 

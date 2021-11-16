@@ -10,7 +10,7 @@ group :development, :test do # <<<< :development, not devlopment
   gem 'sqlite3', '~> 1.4'
 end
 
-group :production do
+group :production, :staging do
   gem "pg"
 end
 

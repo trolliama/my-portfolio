@@ -18,7 +18,7 @@ class Project < ApplicationRecord
 
   validates_presence_of :title, :description, :resume_card, :body
   validates :main_image, attached: true,
-                         content_type: ["image/png", "image/jpg", "image/jpeg"]
+                         content_type: ["image/gif", "image/png", "image/jpg", "image/jpeg"]
   validates :thumb_image, attached: true,
                           content_type: ["image/png", "image/jpg", "image/jpeg"]
 

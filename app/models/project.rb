@@ -1,6 +1,7 @@
 class Project < ApplicationRecord
-  has_one_attached :main_image
-  has_one_attached :thumb_image
+  has_one_attached :gif_image do |attachable|
+    attachable.variant :static_image, resize: "400x250"
+  end
 
   @@contexts = [:technologies, :skills]
 
@@ -17,10 +18,8 @@ class Project < ApplicationRecord
         }
 
   validates_presence_of :title, :description, :resume_card, :body
-  validates :main_image, attached: true,
-                         content_type: ["image/gif", "image/png", "image/jpg", "image/jpeg"]
-  validates :thumb_image, attached: true,
-                          content_type: ["image/png", "image/jpg", "image/jpeg"]
+  validates :gif_image, attached: true,
+                         content_type: ["image/gif"]
 
   def demo_link
     self.links.where(link_type_id: LinkType.where(type_name: "demo").first.id).first

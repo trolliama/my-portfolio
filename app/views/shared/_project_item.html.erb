@@ -1,8 +1,10 @@
 <div class="col-4 my-4">
   <div href="" class="custom-card">
     <div class="row image-hover">
-      <%= image_tag project_img(project_item.thumb_image, "thumb"), width: 400,
-      height: 250, class: "card__image" %>
+        <%= image_tag project_img(project_item.thumb_image, "thumb"), width: 400,
+        height: 250, class: "card__image static" %>
+        <%= image_tag project_img(project_item.main_image, "thumb"), width: 400,
+        height: 250, class: "card__image animated" %>
 
       <div class="container card__image-buttons">
         <div class="row justify-content-end">

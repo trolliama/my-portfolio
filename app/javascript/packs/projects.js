@@ -1,4 +1,4 @@
-function changeCss() {
+function changeNavLogoCss() {
   var divProjectsNav = document.querySelector("#projects-navbar");
 
   if (!divProjectsNav) {
@@ -22,5 +22,28 @@ function changeCss() {
     logoElement.classList.add("logo-white");
   }
 }
-changeCss();
-window.addEventListener("scroll", changeCss, false);
+changeNavLogoCss();
+window.addEventListener("scroll", changeNavLogoCss, false);
+
+$(function () {
+      var _delay = 600;
+
+  // change the classes for project thumb image to static or animated
+  $("#projects .image-hover")
+    .on("mouseenter", function () {
+      var element = $(this);
+
+      setTimeout(function () {
+        element.find("img.static").css("display", "none");
+        element.find("img.animated").css("display", "inline");
+      }, _delay);
+    })
+    .on("mouseleave", function () {
+      var element = $(this);
+
+      setTimeout(function () {
+        element.find("img.static").css("display", "inline");
+        element.find("img.animated").css("display", "none");
+      }, _delay);
+    });
+});

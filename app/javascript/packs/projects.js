@@ -1,26 +1,22 @@
-function changeCss() {
-  var divProjectsNav = document.querySelector("#projects-navbar");
+$(function () {
+      var _delay = 600;
 
-  if (!divProjectsNav) {
-    return;
-  }
+  // change the classes for project thumb image to static or animated
+  $(".project-item .image-hover")
+    .on("mouseenter", function () {
+      var element = $(this);
 
-  var navElement = divProjectsNav.querySelector(".navbar");
-  var logoElement = divProjectsNav.querySelector(".navbar-brand");
+      setTimeout(function () {
+        element.find("img.static").css("display", "none");
+        element.find("img.animated").css("display", "inline");
+      }, _delay);
+    })
+    .on("mouseleave", function () {
+      var element = $(this);
 
-  if (this.scrollY > 490) {
-    navElement.classList.remove("navbar-dark");
-    navElement.classList.add("navbar-light");
-
-    logoElement.classList.remove("logo-white");
-    logoElement.classList.add("logo-dark");
-  } else {
-    navElement.classList.remove("navbar-light");
-    navElement.classList.add("navbar-dark");
-
-    logoElement.classList.remove("logo-dark");
-    logoElement.classList.add("logo-white");
-  }
-}
-changeCss();
-window.addEventListener("scroll", changeCss, false);
+      setTimeout(function () {
+        element.find("img.static").css("display", "inline");
+        element.find("img.animated").css("display", "none");
+      }, _delay);
+    });
+});

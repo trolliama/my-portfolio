@@ -70,7 +70,8 @@ gem 'cancancan'
 gem 'rails_admin', '~> 2.2', '>= 2.2.1'
 gem 'rails_admin_tag_list'
 gem 'mail_form'
-gem 'active_storage_validations'
+# gem 'active_storage_validations'
+gem 'shrine'
 gem 'image_processing'
 gem "aws-sdk-s3", require: false
 

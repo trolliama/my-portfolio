@@ -23,9 +23,9 @@ puts "Created 4 link_types"
                         body: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).")
   puts "Created new #{project_title} object"
 
-  project.gif_image.attach(io: File.open(Rails.root.join("app", "assets", "images", "giphy.gif")), filename: "main_image.gif")
+  project.gif_image = File.open(Rails.root.join("app", "assets", "images", "giphy.gif"), mode: "rb")
 
-  puts "Attached main and thumb image to #{project_title}"
+  puts "Attached gif image to #{project_title}"
 
   project.save
 
@@ -66,7 +66,7 @@ profile = Profile.new(
 
 puts "Created New Main Profile Object"
 
-profile.picture.attach(io: File.open(Rails.root.join("app", "assets", "images", "profile_test.jpg")), filename: "profile_test.jpg")
+profile.picture = File.open(Rails.root.join("app", "assets", "images", "profile_test.jpg"), mode: "rb")
 
 puts "Attached profile picture"
 

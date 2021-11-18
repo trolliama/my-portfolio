@@ -1,7 +1,5 @@
 class Project < ApplicationRecord
-  has_one_attached :gif_image do |attachable|
-    attachable.variant :static_image, resize: "400x250"
-  end
+  include GifUploader::Attachment(:gif_image)
 
   @@contexts = [:technologies, :skills]
 
@@ -18,8 +16,6 @@ class Project < ApplicationRecord
         }
 
   validates_presence_of :title, :description, :resume_card, :body
-  validates :gif_image, attached: true,
-                         content_type: ["image/gif"]
 
   def demo_link
     self.links.where(link_type_id: LinkType.where(type_name: "demo").first.id).first

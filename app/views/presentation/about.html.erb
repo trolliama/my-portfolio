@@ -22,7 +22,7 @@
 
 <div class="container">
   <div class="row align-items-center">
-    <div class="col"><%= image_tag @profile.picture %></div>
+    <div class="col"><%= image_tag @profile.picture_url %></div>
     <div class="col">
       <h1>Hello World!</h1>
       <p><%= @profile.resume %></p>
@@ -66,3 +66,5 @@
     <%= render partial: 'shared/link', collection: @profile.links %>
   </div>
 </div>
+
+<%= javascript_pack_tag 'projects' %>

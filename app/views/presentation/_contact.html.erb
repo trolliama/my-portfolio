@@ -1,5 +1,5 @@
 <div class="col-md-6 my-5">
-  <h3 class="contact-heading mb-4">Want To Get In Touch?</h3>
+  <h3 class="contact-heading mb-4">Quer entrar em contato?</h3>
   <div class="contact100-pic js-tilt ml-5" data-tilt>
     <%= image_tag("img-01.png", style: "height: 60%; width: 60%;") %>
   </div>
@@ -9,7 +9,7 @@
   <div class="row">
     <div class="col-md-12 form-group">
       <%= f.text_field :name, required: true, class: "form-control",
-      placeholder: "Your name" %>
+      placeholder: "Seu nome" %>
     </div>
   </div>
   <div class="row">
@@ -21,25 +21,24 @@
   <div class="row">
     <div class="col-md-12 form-group">
       <%= f.text_field :subject, required: true, class: "form-control",
-      placeholder: "Subject" %>
+      placeholder: "Assunto" %>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12 form-group">
       <%= f.text_area :message, rows: 7, cols: 30, required: true, class:
-      "form-control", placeholder: "Write your message" %>
+      "form-control", placeholder: "Escreva sua mensagem" %>
     </div>
   </div>
 
   <div class="d-none">
-    <%= f.label :nickname %> <%= f.text_field :nickname, :hint => 'Leave this
-    field blank!' %>
+    <%= f.label :nickname %> <%= f.text_field :nickname, :hint => 'Deixe esse campo em branco!' %>
   </div>
 
   <div class="row">
     <div class="col-12">
-      <%= f.submit 'Send Message', class: 'btn btn-dark rounded-0 py-2 px-4',
-      value: "Send Message" %>
+      <%= f.submit 'Enviar Mensagem', class: 'btn btn-dark rounded-0 py-2 px-4',
+      value: "Enviar Mensagem" %>
 
       <span class="submitting"></span>
     </div>

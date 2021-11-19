@@ -11,10 +11,15 @@ else
   s3_options = {
     access_key_id: Rails.application.credentials.dig(:aws, :access_key_id),
     secret_access_key: Rails.application.credentials.dig(:aws, :secret_access_key),
-    region: "us-east-2",
-    bucket: "rails-portfolio-311021",
+    region: "us-east-2"
   }
 
+  if Rails.env.staging?
+    s3_options[:bucket] = "rails-portfolio-311021"
+  elsif Rails.env.production?
+    s3_options[:bucket] = "rails-portfolio-prod"
+  end
+  
   Shrine.storages = {
     cache: Shrine::Storage::S3.new(**s3_options, prefix: "cache"), # temporary
     store: Shrine::Storage::S3.new(**s3_options), # permanent

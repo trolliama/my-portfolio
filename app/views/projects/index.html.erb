@@ -8,10 +8,12 @@
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <div class="text-center my-5">
-            <h1 class="display-5 fw-bolder text-white mb-2">My Projects</h1>
+            <h1 class="display-5 fw-bolder text-white mb-2">Meus Projetos</h1>
             <p class="lead text-white-50 mb-4">
-              Quickly design and customize responsive mobile-first sites with
-              Bootstrap, the world’s most popular front-end open source toolkit!
+              Encontre meus projetos aqui.<br>
+               Filtre por tecnologias usadas ou 
+              por skills relacionadas. <br>
+              Ex: python, ruby, software engineer, finance
             </p>
           </div>
         </div>
@@ -21,7 +23,7 @@
         <div class="col-6 pl-5 ml-2">
           <div class="input-group">
             <%= form_with url: project_search_path, method: :get, html: {class: "form-inline"} do |form| %>
-              <%= form.text_field :query , class: "form-control", placeholder: "Technologies... (Ex: python, aws)"%>
+              <%= form.text_field :query , class: "form-control", placeholder: "Tecnologias... (Ex: python, heroku)"%>
               <button type="submit" class="btn btn-info">
                 <%= icon("fas", "search") %>
               </button>

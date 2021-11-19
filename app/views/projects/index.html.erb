@@ -13,7 +13,7 @@
               Encontre meus projetos aqui.<br>
                Filtre por tecnologias usadas ou 
               por skills relacionadas. <br>
-              Ex: python, ruby, software engineer
+              Ex: python, ruby, software engineer, finance
             </p>
           </div>
         </div>
@@ -23,7 +23,7 @@
         <div class="col-6 pl-5 ml-2">
           <div class="input-group">
             <%= form_with url: project_search_path, method: :get, html: {class: "form-inline"} do |form| %>
-              <%= form.text_field :query , class: "form-control", placeholder: "Tecnologias... (Ex: python, aws)"%>
+              <%= form.text_field :query , class: "form-control", placeholder: "Tecnologias... (Ex: python, heroku)"%>
               <button type="submit" class="btn btn-info">
                 <%= icon("fas", "search") %>
               </button>

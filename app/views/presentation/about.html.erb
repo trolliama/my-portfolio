@@ -22,19 +22,19 @@
 
 <div class="container">
   <div class="row align-items-center">
-    <div class="col"><%= image_tag @profile.picture_url, width: 350, height: 350%></div>
-    <div class="col">
+    <div class="col-12 justify-content-center col-lg-6"><%= image_tag @profile.picture_url, width: 350, height: 350%></div>
+    <div class="col-12 col-lg-6">
       <h1>Hello World!</h1>
       <p><%= @profile.resume %></p>
     </div>
   </div>
 
   <div class="row my-5">
-    <div class="col my-2">
+    <div class="col-12 col-lg-6 my-2">
       <h2>Minha Carreira</h2>
       <p><%= @profile.career_path %></p>
     </div>
-    <div class="col my-2">
+    <div class="col-12 col-lg-6 my-2">
       <%= render partial: "shared/tag", collection: @profile.all_tags, locals:
       {_classes: "custom-badge custom-badge-info custom-badge-outlined
       tag-profiles m-2"} %>

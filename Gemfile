@@ -77,4 +77,3 @@ gem "aws-sdk-s3", require: false
 
 gem "redcarpet"
 gem "coderay"
-

@@ -2,7 +2,7 @@ require "shrine"
 require "shrine/storage/file_system"
 require "shrine/storage/s3"
 
-if Rails.env.development?
+if Rails.env.development? || Rails.env.test?
   Shrine.storages = {
     cache: Shrine::Storage::FileSystem.new("public", prefix: "uploads/cache"), # temporary
     store: Shrine::Storage::FileSystem.new("public", prefix: "uploads"),       # permanent
@@ -14,7 +14,7 @@ else
     region: "us-east-2"
   }
 
-  if Rails.env.staging?
+  if Rails.env.staging? 
     s3_options[:bucket] = "rails-portfolio-311021"
   elsif Rails.env.production?
     s3_options[:bucket] = "rails-portfolio-prod"

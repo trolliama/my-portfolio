@@ -1,4 +1,5 @@
-![enter image description here](https://media.giphy.com/media/R64S8IrQozirVilZ4y/giphy.gif)
+<img src="https://media.giphy.com/media/R64S8IrQozirVilZ4y/giphy.gif" width="1000px" />
+
 [Take a look](https://caiow-portfolio.herokuapp.com/)
 
 ### Technologies
